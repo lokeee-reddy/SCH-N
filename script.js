@@ -1,20 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Intro animation cleanup (optional, as CSS handles the hiding, 
-    // but good practice to remove from DOM or disable interactions)
-    setTimeout(() => {
-        const intro = document.getElementById('intro');
+    const intro = document.getElementById('intro');
+    
+    // Check if intro has been played this session
+    if (!sessionStorage.getItem('introPlayed')) {
+        // Play intro
+        setTimeout(() => {
+            if (intro) {
+                intro.style.display = 'none';
+            }
+            sessionStorage.setItem('introPlayed', 'true');
+        }, 3000);
+    } else {
+        // Skip intro immediately
         if (intro) {
             intro.style.display = 'none';
         }
-    }, 3000); // Wait for animations to finish (2s delay + 1s fade)
+    }
 
-    // Horizontal Scrolling for Works Section
-    const worksContainer = document.querySelector('.horizontal-scroll-wrapper');
+    // Auto-scrolling is now handled by CSS animation for smoother performance
+    // We duplicate the work items so the scroll animation is seamless
+    const worksContainer = document.getElementById('works-container');
     if (worksContainer) {
-        worksContainer.addEventListener('wheel', (evt) => {
-            // Only scroll horizontally if mouse is hovering over this specific section
-            evt.preventDefault();
-            worksContainer.scrollLeft += evt.deltaY;
-        });
+        const items = worksContainer.innerHTML;
+        worksContainer.innerHTML += items; // Duplicate for infinite scroll effect
     }
 });
