@@ -1,2 +1,0 @@
-# SCH-N
-web application

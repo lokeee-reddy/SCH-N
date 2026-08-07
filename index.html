@@ -6,18 +6,30 @@
     <title>SCHÖN | Interiors by Arun Reddy</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo_transparent.png">
 </head>
 <body>
     <!-- Intro Animation -->
     <div id="intro">
-        <h1 class="intro-logo">SCHÖN</h1>
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <img src="logo_transparent.png" alt="SCHÖN Logo" style="height: 120px; opacity: 0; animation: fadeIn 0.5s forwards;">
+            <div style="font-family: 'Cinzel', serif; font-size: 4rem; font-weight: 700; display: flex;">
+                <span style="opacity: 0; animation: fadeIn 0.5s forwards 0.5s;">S</span>
+                <span style="opacity: 0; animation: fadeIn 0.5s forwards 0.6s;">C</span>
+                <span style="opacity: 0; animation: fadeIn 0.5s forwards 0.7s;">H</span>
+                <span style="opacity: 0; animation: fadeIn 0.5s forwards 0.8s;">Ö</span>
+                <span style="opacity: 0; animation: fadeIn 0.5s forwards 0.9s;">N</span>
+            </div>
+        </div>
     </div>
 
     <!-- Header -->
     <header id="header">
-        <a href="index.html" class="logo" style="text-decoration:none; color:inherit;">SCHÖN</a>
+        <a href="index.html" class="logo" style="text-decoration:none; color:inherit; display: flex; align-items: center;">
+            <img src="logo_transparent.png" alt="SCHÖN Logo" style="height: 40px; display: block;">
+            <span style="font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 700; margin-left: 10px;">SCHÖN</span>
+        </a>
         <nav>
             <a href="#works">Works</a>
             <a href="#services">Services</a>
@@ -27,10 +39,20 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">SCHÖN</h1>
-            <h2 class="hero-subtitle">interiors by<br>Arun Reddy</h2>
+    <section id="hero" style="position: relative; overflow: hidden;">
+        <!-- Native Vector Cartoon Furniture (Emojis) Popouts -->
+        <div class="popout-furniture" style="--x: -300px; --y: -200px; --rot: -15deg; --delay: 0.2s;">🛋️</div>
+        <div class="popout-furniture" style="--x: 350px; --y: -150px; --rot: 25deg; --delay: 0.4s;">🪑</div>
+        <div class="popout-furniture" style="--x: -350px; --y: 180px; --rot: -20deg; --delay: 0.6s;">🪞</div>
+        <div class="popout-furniture" style="--x: 300px; --y: 220px; --rot: 15deg; --delay: 0.8s;">🛏️</div>
+        
+        <div class="hero-content" style="position: relative; z-index: 1;">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                <img src="logo_transparent.png" class="hero-title" alt="SCHÖN Logo" style="height: 150px; margin-right: 20px;">
+                <h1 style="font-family: 'Cinzel', serif; font-size: 4rem; font-weight: 700; margin: 0;">SCHÖN</h1>
+            </div>
+            <hr style="width: 80%; border: none; border-top: 2px solid var(--text-color); margin: 0 auto 1.5rem;">
+            <h2 class="hero-subtitle" style="text-transform: uppercase; font-size: 1.5rem;">INTERIORS BY ARUN REDDY</h2>
         </div>
     </section>
 
@@ -39,6 +61,31 @@
         <h2 class="section-title">Works</h2>
         <div class="horizontal-scroll-wrapper">
             <div class="horizontal-scroll-container" id="works-container">
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Living Room">
+                    <div class="overlay"><span>Luxury Living Room</span></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80" alt="Kitchen">
+                    <div class="overlay"><span>Modern Modular Kitchen</span></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=800&q=80" alt="Bedroom">
+                    <div class="overlay"><span>Minimalist Bedroom</span></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=800&q=80" alt="Office">
+                    <div class="overlay"><span>Corporate Workspace</span></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Dining">
+                    <div class="overlay"><span>Elegant Dining Area</span></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Villa">
+                    <div class="overlay"><span>Bespoke Villa</span></div>
+                </div>
+                <!-- Duplicate for seamless scroll -->
                 <div class="work-item">
                     <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Living Room">
                     <div class="overlay"><span>Luxury Living Room</span></div>

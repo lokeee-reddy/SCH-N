@@ -17,11 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Auto-scrolling is now handled by CSS animation for smoother performance
-    // We duplicate the work items so the scroll animation is seamless
+    // Auto-scrolling was removed, using CSS grid layout now
     const worksContainer = document.getElementById('works-container');
-    if (worksContainer) {
-        const items = worksContainer.innerHTML;
-        worksContainer.innerHTML += items; // Duplicate for infinite scroll effect
-    }
 });
