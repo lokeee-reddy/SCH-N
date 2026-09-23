@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service | SCHÖN</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .service-page {
+            min-height: 100vh;
+            padding-top: 10rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .service-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .service-gallery img {
+            width: 100%;
+            border-radius: 8px;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">SCHÖN</div>
+        <nav>
+            <a href="index.html#works">Works</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#portfolio">Portfolio</a>
+            <a href="index.html#contact">Get in Touch</a>
+        </nav>
+    </header>
+
+    <section class="service-page">
+        <a href="index.html#services" class="back-link">← Back to Services</a>
+        <h1 id="service-title" class="section-title">Service Details</h1>
+
+        <div class="service-gallery" id="service-gallery">
+            <!-- Dynamic images will be inserted here -->
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const type = urlParams.get('type');
+
+            const titleElement = document.getElementById('service-title');
+            const galleryElement = document.getElementById('service-gallery');
+
+            if (type) {
+                // Format title (e.g., modular-kitchens -> Modular Kitchens)
+                const formattedTitle = type.split('-')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
+                titleElement.textContent = formattedTitle;
+
+                // Provide some mock images for demonstration
+                const mockImages = [
+                    'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=800&q=80'
+                ];
+
+                galleryElement.innerHTML = mockImages.map(img => `<img src="${img}" alt="${formattedTitle}">`).join('');
+            } else {
+                titleElement.textContent = "Service Not Found";
+            }
+        });
+    </script>
+</body>
+
+</html>
