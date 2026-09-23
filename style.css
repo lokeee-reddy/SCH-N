@@ -43,6 +43,27 @@ body {
     to { opacity: 1; }
 }
 
+/* 🐴 PONYTAIL: Native CSS animation instead of React + Framer Motion. 
+   Ceiling: No scroll-intersection triggers or complex dynamic easing out of the box. 
+   Upgrade Path: If complex scroll triggers or dynamic text splitting are needed, integrate a JS library like GSAP or Framer Motion. */
+@keyframes blurTextIn {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(-50px);
+    }
+    50% {
+        opacity: 0.5;
+        filter: blur(5px);
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
 @keyframes fadeOut {
     to {
         opacity: 0;
@@ -127,6 +148,42 @@ section {
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: 2px;
+}
+
+/* 🐴 PONYTAIL: Native CSS + JS text rotation instead of React + Framer Motion. 
+   Ceiling: Cannot easily do per-character stagger animations without a complex JS library. 
+   Upgrade Path: Use GSAP TextPlugin or Framer Motion if complex per-character split text animations are required. */
+.rotating-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 0.2rem 0.8rem;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: width 0.4s ease;
+    white-space: nowrap;
+}
+
+.rotating-text {
+    display: inline-block;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rotating-text.fade-out {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.rotating-text.fade-in {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: none;
 }
 
 /* Works Section */
