@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service | SCHÖN</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         .service-page {
@@ -12,6 +13,7 @@
             padding-top: 10rem;
             text-align: center;
         }
+
         .back-link {
             display: inline-block;
             margin-bottom: 2rem;
@@ -21,12 +23,14 @@
             letter-spacing: 1px;
             font-size: 0.9rem;
         }
+
         .service-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
         }
+
         .service-gallery img {
             width: 100%;
             border-radius: 8px;
@@ -35,6 +39,7 @@
         }
     </style>
 </head>
+
 <body>
     <header id="header">
         <div class="logo">SCHÖN</div>
@@ -49,7 +54,7 @@
     <section class="service-page">
         <a href="index.html#services" class="back-link">← Back to Services</a>
         <h1 id="service-title" class="section-title">Service Details</h1>
-        
+
         <div class="service-gallery" id="service-gallery">
             <!-- Dynamic images will be inserted here -->
         </div>
@@ -59,15 +64,15 @@
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const type = urlParams.get('type');
-            
+
             const titleElement = document.getElementById('service-title');
             const galleryElement = document.getElementById('service-gallery');
 
             if (type) {
                 // Format title (e.g., modular-kitchens -> Modular Kitchens)
                 const formattedTitle = type.split('-')
-                                           .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                                           .join(' ');
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
                 titleElement.textContent = formattedTitle;
 
                 // Provide some mock images for demonstration
@@ -84,4 +89,5 @@
         });
     </script>
 </body>
+
 </html>
