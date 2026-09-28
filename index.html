@@ -7,36 +7,31 @@
     <title>SCHÖN | Interiors by Arun Reddy</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&family=Outfit:wght@300;400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Montserrat:wght@300;400;600;800;900&family=Outfit:wght@300;400;600;800;900&family=Syne:wght@700;800&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/logo_transparent.png">
 </head>
 
 <body>
-    <!-- Intro Animation -->
-    <div id="intro">
-        <div style="display: flex; align-items: center; gap: 20px;">
-            <img src="assets/logo_transparent.png" alt="SCHÖN Logo"
-                style="height: 120px; opacity: 0; animation: fadeIn 0.5s forwards;">
-            <div style="font-family: 'Cinzel', serif; font-size: 4rem; font-weight: 700; display: flex;">
-                <span style="opacity: 0; animation: blurTextIn 0.8s forwards 0.5s;">S</span>
-                <span style="opacity: 0; animation: blurTextIn 0.8s forwards 0.6s;">C</span>
-                <span style="opacity: 0; animation: blurTextIn 0.8s forwards 0.7s;">H</span>
-                <span style="opacity: 0; animation: blurTextIn 0.8s forwards 0.8s;">Ö</span>
-                <span style="opacity: 0; animation: blurTextIn 0.8s forwards 0.9s;">N</span>
-            </div>
-        </div>
-    </div>
-
     <!-- Header -->
     <header id="header">
         <a href="index.html" class="logo"
             style="text-decoration:none; color:inherit; display: flex; align-items: center;">
-            <img src="assets/logo_transparent.png" alt="SCHÖN Logo" style="height: 40px; display: block;">
-            <span
-                style="font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 700; margin-left: 10px;">SCHÖN</span>
+            <img src="assets/logo_transparent.png" alt="SCHÖN Logo" class="logo-img" style="height: 36px; display: block;">
+            <span class="logo-name-container">
+                <span class="char-slot"><span class="char-inner" style="--delay: 0.05s;">S</span></span>
+                <span class="char-slot"><span class="char-inner" style="--delay: 0.10s;">C</span></span>
+                <span class="char-slot"><span class="char-inner" style="--delay: 0.15s;">H</span></span>
+                <span class="char-slot o-slot"><span class="char-inner" style="--delay: 0.20s;">Ö</span></span>
+                <span class="char-slot n-slot">
+                    <span class="char-inner" style="--delay: 0.25s;">N</span>
+                    <span class="symbol-slot"><span class="char-inner symbol" style="--delay: 0.30s;">®</span></span>
+                </span>
+            </span>
         </a>
+        <div class="header-studio-tag">Interior Architecture Studio</div>
         <nav>
             <a href="#works">Works</a>
             <a href="#services">Services</a>
@@ -46,25 +41,52 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" style="position: relative; overflow: hidden;">
-        <!-- Native Vector Cartoon Furniture (Emojis) Popouts -->
-        <div class="popout-furniture" style="--x: -300px; --y: -200px; --rot: -15deg; --delay: 0.2s;">🛋️</div>
-        <div class="popout-furniture" style="--x: 350px; --y: -150px; --rot: 25deg; --delay: 0.4s;">🪑</div>
-        <div class="popout-furniture" style="--x: -350px; --y: 180px; --rot: -20deg; --delay: 0.6s;">🪞</div>
-        <div class="popout-furniture" style="--x: 300px; --y: 220px; --rot: 15deg; --delay: 0.8s;">🛏️</div>
-
-        <div class="hero-content" style="position: relative; z-index: 1;">
-            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-                <img src="assets/logo_transparent.png" class="hero-title" alt="SCHÖN Logo"
-                    style="height: 150px; margin-right: 20px;">
-                <h1 style="font-family: 'Cinzel', serif; font-size: 4rem; font-weight: 700; margin: 0;">SCHÖN</h1>
+    <section id="hero">
+        <div class="hero-container">
+            <div class="hero-top-bar">
+                <span class="hero-tag">Interior Architecture & Design</span>
+                <span class="hero-loc">Hyderabad, IN &bull; Global</span>
+                <span class="hero-est">&copy;2018&ndash;26</span>
             </div>
-            <hr style="width: 80%; border: none; border-top: 2px solid var(--text-color); margin: 0 auto 1.5rem;">
-            <h2 class="hero-subtitle" style="text-transform: uppercase; font-size: 1.5rem;">INTERIORS BY ARUN REDDY</h2>
-            <h3
-                style="margin-top: 1.5rem; font-size: 1.8rem; font-weight: 300; display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
-                Specializing in <span class="rotating-box"><span id="rotating-text" class="rotating-text">Modular
-                        Kitchens</span></span></h3>
+
+            <!-- Giant SCHÖN® Brand Headline Covering Half the Screen -->
+            <div class="hero-main-title-wrap">
+                <h1 class="hero-name-container">
+                    <span class="char-slot"><span class="char-inner" style="--delay: 0.1s;">S</span></span>
+                    <span class="char-slot"><span class="char-inner" style="--delay: 0.18s;">C</span></span>
+                    <span class="char-slot"><span class="char-inner" style="--delay: 0.26s;">H</span></span>
+                    <span class="char-slot o-slot"><span class="char-inner" style="--delay: 0.34s;">Ö</span></span>
+                    <span class="char-slot n-slot">
+                        <span class="char-inner" style="--delay: 0.42s;">N</span>
+                        <span class="symbol-slot"><span class="char-inner symbol" style="--delay: 0.50s;">®</span></span>
+                    </span>
+                </h1>
+                <div class="hero-subtitle-wrap">
+                    <h2 class="hero-subtitle">INTERIORS BY ARUN REDDY</h2>
+                </div>
+            </div>
+
+            <div class="hero-divider"></div>
+
+            <div class="hero-bottom-grid">
+                <div class="hero-col-left">
+                    <div class="hero-specializing">
+                        <span class="specializing-title">Specializing in</span>
+                        <div class="rotating-box-container">
+                            <span class="rotating-box"><span id="rotating-text" class="rotating-text">Modular Kitchens</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-col-right">
+                    <p class="hero-desc">
+                        Crafting bespoke living spaces, luxury modular kitchens, and refined architectural spaces tailored to timeless elegance and modern living.
+                    </p>
+                    <a href="#works" class="hero-cta-link">
+                        <span>Explore Selected Works</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 

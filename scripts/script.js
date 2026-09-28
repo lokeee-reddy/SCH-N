@@ -1,21 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const intro = document.getElementById('intro');
-    
-    // Check if intro has been played this session
-    if (!sessionStorage.getItem('introPlayed')) {
-        // Play intro
-        setTimeout(() => {
-            if (intro) {
-                intro.style.display = 'none';
-            }
-            sessionStorage.setItem('introPlayed', 'true');
-        }, 3000);
-    } else {
-        // Skip intro immediately
-        if (intro) {
-            intro.style.display = 'none';
-        }
-    }
+
+    // ==========================================================================
+    // Choreographed Opening Sequence (Zajno Kinetic Hierarchy)
+    // 1. SCHÖN® characters slide up (0.0s - 0.6s)
+    // 2. 'INTERIORS BY ARUN REDDY' appears directly beneath the name (0.65s) and stays there
+    // 3. Header, top tags, divider, specializing section, and details reveal (1.1s)
+    // ==========================================================================
+    setTimeout(() => {
+        document.body.classList.add('hero-revealed');
+    }, 1100);
 
     // Auto-scrolling was removed, using CSS grid layout now
     const worksContainer = document.getElementById('works-container');
